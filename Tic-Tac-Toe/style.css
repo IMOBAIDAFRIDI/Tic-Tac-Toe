@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #3b3b3b;
+    color: #f0f0f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green */
+}
+
+/* Game Board container */
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin; /* Choti screens par bhi gap maintain karega */
+}
+
+/* 3x3 Grid (Game area) */
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap; /* Boxes ko next line par bhejne ke liye */
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+/* Har ek square (box) */
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: #ff5722; /* Orange-Red for 'X' and 'O' */
+    background-color: #fcfcfc;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.box:hover {
+    background-color: #e0e0e0;
+}
+
+/* Reset Button */
+#reset-btn, #new-game-btn {
+    padding: 1vmin 3vmin;
+    font-size: 2.5vmin;
+    background-color: #4CAF50; /* Green */
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#reset-btn:hover, #new-game-btn:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Winner Message Container */
+.msg-container {
+    height: 100vmin; /* Center karne ke liye */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vmin;
+    position: absolute; /* Board ke oopar aayega */
+    background-color: rgba(0, 0, 0, 0.8); /* Thoda transparent black background */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Baqi elements se oopar */
+}
+
+#msg {
+    color: #fff;
+    font-size: 8vmin;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Hide message container by default */
+.hide {
+    display: none;
+}
